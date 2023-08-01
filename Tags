@@ -1,0 +1,17 @@
+kind?: CompletionItemKind;
+    /**
+     * Tags for this completion item.
+     *
+     * @since 3.15.0
+     */
+    tags?: CompletionItemTag[];
+    /**
+     * A human-readable string with additional information
+     * about this item, like type or symbol information.
+     */
+    detail?: string;
+    /**
+     * A human-readable string that represents a doc-comment.
+————————————————
+版权声明：本文为CSDN博主「Mino.66」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/luoluoyang23/article/details/124543453
