@@ -1,0 +1,28 @@
+
+void RecycleBin::Load(BindCallbackR1<Status>* done)
+{
+    ......
+    FOREACH(iter, fileStats)
+    {
+        RecycleFile item;
+        Status status = ParseDeletedFileName(iter->path, &item.timestamp);
+        if (!status.IsOk() { ...... }
+        item.fileName = iter->path;
+        item.size = iter->size;
+        item.physicalSize = iter->refCount > 1 ? 0 : iter->physicalSize;
+        ......
+        // 这是修改前的代码
+         earliestTimestamp[item.medium] =
+             item.timestamp != 0 && item.timestamp < earliestTimestamp[item.medium] ?
+             item.timestamp : earliestTimestamp[item.medium];
+         }
+        // 这是修改后的代码
+        if (item.timestamp != 0 &&
+            item.timestamp < earliestTimestamp[item.medium])
+        {
+            earliestTimestamp[item.medium] = item.timestamp;
+        }
+
+————————————————
+版权声明：本文为CSDN博主「帅气滴点C」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/baidu_31437863/article/details/127311528
