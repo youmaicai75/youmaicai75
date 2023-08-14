@@ -1,0 +1,12 @@
+public static void main
+        ( String[] args )
+    {
+        try {
+            Configuration config = DatabaseManager.createConfigurationFile( "Demo1.ulj" );
+
+            Connection conn = DatabaseManager.createDatabase( config );
+            conn.schemaCreateBegin();
+    
+            TableSchema table_schema = conn.createTable( "Employee" );
+            table_schema.createColumn( "number", Domain.INTEGER );
+            table_schema.createColumn( "last_name", Domain.VARCHAR, 32 );
