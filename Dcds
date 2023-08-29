@@ -1,0 +1,8 @@
+DS_OPTS="-Dcds.home=${CDS_HOME}" 
+CDS_OPTS="${CDS_OPTS} -Dcds.config.file=CDS.properties" 
+CDS_OPTS="${CDS_OPTS} -Dcds.config.dir=${CONF_DIR}" 
+ 
+# Compile 
+JAVAC_OPTS="-classpath ${COMPILE_LCP}" 
+JAVAC_OPTS="${JAVAC_OPTS} CDSBillingSubscriber.java" 
+$JAVA_HOME/bin/javac ${JAVAC_OPTS} 
