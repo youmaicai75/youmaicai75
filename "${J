@@ -1,0 +1,4 @@
+JAVA_OPTS="${JAVA_OPTS} ${connFactory}" 
+JAVA_OPTS="${JAVA_OPTS} ${providerURL}" 
+JAVA_OPTS="${JAVA_OPTS} ${topicName}" 
+$JAVA_HOME/bin/java ${JAVA_OPTS} 
